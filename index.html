@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Place searches</title>
+  <meta name="viewport" content="initial-scale=0.9, user-scalable=no">
+  <meta charset="utf-8">
+  <link href="static\css\lib\buttons.css" rel="stylesheet">
+  <link href="static\css\lib\font-awesome.min.css" rel="stylesheet">
+  <link href="static\css\style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div id="pollSlider-button"><button class="button button-caution button-box button-large"><i class="fa fa-bars" aria-hidden="true"></i></button></div>
+    <div class="options-box">
+      <h1>Walk Around </h1>
+      <hr>
+      <div class="input">
+        <input id="search-text" data-bind="textInput: filterKeyword" autofocus placeholder="Quick Search">
+      </div>
+      <div class="listtable" data-bind="foreach: filter">
+        <div data-bind="text: $data.name, click: clickOnList" , class="places-list">
+        </div>
+      </div>
+      <hr>
+      <div style="text-align: center;">
+        <button id="go" class="button button-raised button-action button-circle button-jumbo" disabled><i>GO!</i></button>
+      </div>
+    </div>
+    <div id="map"></div>
+  </div>
+
+  <script src="static\js\lib\knockout-3.4.2.js"></script>
+  <script src="static\js\lib\jquery-3.2.1.min.js"></script>
+  <script src="static\js\app.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-O6r5Pa06bZhrexzQiSC927Op6rXDiws&libraries=places&callback=initMap"></script>
+</body>
+
+</html>
